@@ -1,0 +1,56 @@
+/*CSS document*/
+
+body {
+ color: rgb(23, 23, 23);
+ background-color: rgb(238, 244, 241);
+}
+
+p {
+    font-family: "mr-eaves-xl-modern", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+    font-size: 11pt;
+}
+
+h3 {
+    font-family: temeraire, serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+div.container {
+    max-width: 40em;
+    margin: auto;
+    display: block;
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li a:hover {
+    color: rgb(109, 138, 150);
+}
+
+.navbar { 
+  width: 100%;
+  overflow: auto;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(23, 23, 23);
+}
+
+footer {
+    padding: 1em 0 0 0;
+}
