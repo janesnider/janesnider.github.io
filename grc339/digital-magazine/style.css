@@ -20,11 +20,12 @@ img {
 
 ul {
     list-style-type: none;
-    text-align: center;
+    text-align: left;
+    padding: 0;
 }
 
 nav ul {
-	padding: 1em 0em;
+	padding: 0em 0em 1em;
     margin-bottom: 2em;
     font-size: 1em;
 }
@@ -32,10 +33,9 @@ nav ul {
 nav ul li {
 	display: inline;
     font-family: "gopher", sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-style: normal;
     text-transform: uppercase;
-    margin: auto;
     padding-inline: 0.5em;
     
 }
@@ -45,10 +45,8 @@ nav ul li a {
 	text-decoration: none;
 }
 
-h1{
-    width: 10em;
-    margin: auto;
-    padding: 2em 0em 0em;
+h1 {
+    padding: 1em 0em 0em;
 }
 
 h2 {
@@ -60,8 +58,16 @@ h2 {
     text-transform: uppercase;
 }
 
+h2.gallery:hover {
+    color: rgb(109, 138, 150)
+}
+
+h2.gallery {
+    margin: 0 0 1em;
+}
+
 h3 {
-    color: #cea050;
+    color: rgb(206 160 80);
     font-family: "gopher", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -69,25 +75,41 @@ h3 {
     text-transform: uppercase;
     margin: 0;
     padding-top: 0.5em;
-    text-decoration: none;
+    text-decoration: none; 
+}
+
+h3:hover {
+    color: rgb(109, 138, 150);
+}
+
+h4 {
+    color: rgb(206 160 80);
+    font-family: "gopher", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    text-transform: uppercase;
+    margin: 0;
+    text-decoration: none; 
 }
 
 figcaption{
-    color: rgb(10 10 10); 
+    color: rgb(208 84 46); 
     font-family: "gopher", sans-serif;
     font-weight: 400;
-    font-size: 10pt;
-    font-style: normal;
+    font-size: 0.8em;
+    font-style: italic;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
 }
 
 p{
-    color: rgb(10 10 10); 
-    font-family: "mr-eaves-xl-modern", sans-serif;
+    color: rgb(10 10 10);
+    font-family: "gopher", sans-serif;
 	font-weight: 400;
 	font-style: normal;
-    font-size: 10pt;
+    font-size: 0.9em;
+    line-height: 1.3em;
     margin-bottom: 2em;
 }
 
@@ -99,9 +121,9 @@ section{
     margin: 0 auto 0;
 }
 
-a{
+a {
     text-decoration: none;
-    color: #cea050;
+    color: rgb(206 160 80);
 }
 
 a:hover {
@@ -121,17 +143,106 @@ p.footer{
     text-transform: uppercase;
 }
 
+main.photogallery {
+    position: relative;
+    overflow: hidden;
+    max-width: 50em;
+    grid-column: 1/3;
+    padding-bottom: calc(67% + 3em);
+}
+
+main.photogallery input {
+    display: none;
+}
+
+figure.photogallery {
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+input:nth-of-type(1):checked ~ figure.photogallery:nth-of-type(1),
+input:nth-of-type(2):checked ~ figure.photogallery:nth-of-type(2),
+input:nth-of-type(3):checked ~ figure.photogallery:nth-of-type(3),
+input:nth-of-type(4):checked ~ figure.photogallery:nth-of-type(4),
+input:nth-of-type(5):checked ~ figure.photogallery:nth-of-type(5),
+input:nth-of-type(6):checked ~ figure.photogallery:nth-of-type(6),
+input:nth-of-type(7):checked ~ figure.photogallery:nth-of-type(7),
+input:nth-of-type(8):checked ~ figure.photogallery:nth-of-type(8){
+    opacity: 1;
+}
+
+nav.photogallery {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 0.2em;
+    max-width: 50em;
+    grid-column: 1/3;
+}
+
+div.gallery {
+    max-width: 60em;
+    margin: 0 auto;
+    padding: 0em;
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+}
+
+img.photogallery {
+    width: 100%;
+}
+
+input {
+    margin-bottom: 1em;
+}
+
+p.newsletter {
+    color: rgb(10 10 10); 
+    font-family: "gopher", sans-serif;
+    font-weight: 400;
+    font-size: 0.8em;
+    font-style: normal;
+}
+
+label {
+    color: rgb(10 10 10); 
+    font-family: "mr-eaves-xl-modern", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+    font-size: 1em;
+}
+
+section.personal-info ul li input[type="text"],
+section ul li input[type="email"],
+section ul li input[type="tel"],
+section ul li select {
+	flex: 4 0 28em;
+	box-sizing: border-box;
+}
+
+section.personal-info ul li {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 1em;
+}
+
+section.personal-info ul li label {
+	flex: 0 0 5em;
+}
+
+
 @media screen and (min-width:50em){
     
     h1{
         width:20em;
-        margin: auto;
-        padding: 2em 0em 0em;
+        padding: 1.5em 0em 0em;
     }
 
     div.container{
         display:grid;
-        grid-template-columns: 3fr 1fr;
+        grid-template-columns: 2fr 1fr;
         grid-column-gap: 1.5em;
         max-width: 60em;
     }
@@ -147,6 +258,13 @@ p.footer{
         grid-column-gap: 1em;
     }
 
+    main.photogallery, nav.photogallery {
+        grid-column: 1/3;
+
+    }
+
+
+
     section.mainstory{
         grid-column: 1/3;
     }
@@ -154,4 +272,12 @@ p.footer{
     aside{
         grid-column: 2/3;
     }
+}
+
+
+@media screen and (min-width:60em){
+    main.photogallery {
+        padding-bottom: 36.5em;
+    }
+
 }
